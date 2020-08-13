@@ -23,6 +23,8 @@ test:
   commands:
     - test -f ${PREFIX}/lib/libdeflate.a            # [unix]
     - test -f ${PREFIX}/lib/libdeflate${SHLIB_EXT}  # [unix]
+    - libdeflate-gzip -h
+    - libdeflate-gunzip -h
 
 about:
   home: https://github.com/ebiggers/libdeflate
