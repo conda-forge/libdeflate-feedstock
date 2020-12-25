@@ -1,7 +1,7 @@
 #!/bin/bash
+set -x
 
 export C_INCLUDE_PATH=${PREFIX}/include
-export LIBRARY_PATH=${PREFIX}/lib
 
 make
 
@@ -10,5 +10,7 @@ make
 make install
 
 
+# Remove static libraries
+rm -f libdeflate.a
 # Redundant for linux. Necessary for Mac OS X.
- cp libdeflate.* $PREFIX/lib/
+cp libdeflate.* $PREFIX/lib/
