@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('libdeflate', max_pin='x.x') }}
@@ -22,7 +22,7 @@ requirements:
 
 test:
   commands:
-    - test -f ${PREFIX}/lib/libdeflate.a            # [unix]
+    - test ! -f ${PREFIX}/lib/libdeflate.a          # [unix]
     - test -f ${PREFIX}/lib/libdeflate${SHLIB_EXT}  # [unix]
     - libdeflate-gzip -h
     - libdeflate-gunzip -h
