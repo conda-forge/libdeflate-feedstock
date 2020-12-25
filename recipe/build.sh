@@ -1,13 +1,16 @@
 #!/bin/bash
+set -x
 
 export C_INCLUDE_PATH=${PREFIX}/include
-export LIBRARY_PATH=${PREFIX}/lib
 
 make
-mkdir -p $PREFIX/lib
-mkdir -p $PREFIX/include
 
-# Note to the wise: we're just copying over the library part of libdeflate
-# Excluding the "gzip" replacements, which would clobber the traditional zlib packages if installed.
-mv libdeflate.h $PREFIX/include/
+# The make script uses the $PREFIX env variable to install the application.
+# The 'gzip' application (which is not gzip) will be renamed libdeflate-gzip.
+make install
+
+
+# Remove static libraries
+rm -f libdeflate.a
+# Redundant for linux. Necessary for Mac OS X.
 cp libdeflate.* $PREFIX/lib/
