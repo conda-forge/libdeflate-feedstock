@@ -176,4 +176,6 @@ Feedstock Maintainers
 =====================
 
 * [@dpryan79](https://github.com/dpryan79/)
+* [@hmaarrfk](https://github.com/hmaarrfk/)
+* [@rhpvorderman](https://github.com/rhpvorderman/)
 
