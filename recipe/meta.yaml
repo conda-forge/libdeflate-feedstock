@@ -23,7 +23,7 @@ test:
   commands:
     - test ! -f ${PREFIX}/lib/libdeflate.a          # [unix]
     - test -f ${PREFIX}/lib/libdeflate${SHLIB_EXT}  # [unix]
-    - test -f ${PREFIX}/in/libdeflate.h             # [unix]
+    - test -f ${PREFIX}/include/libdeflate.h        # [unix]
     - libdeflate-gzip -h
     - libdeflate-gunzip -h
     - if not exist %LIBRARY_BIN%\\libdeflate.dll exit 1  # [win]

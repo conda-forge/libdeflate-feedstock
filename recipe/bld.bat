@@ -6,12 +6,10 @@ nmake /f Makefile.msc
 if errorlevel 1 exit 1
 
 
+:REM don't fail when making directories that might already exist
 mkdir %LIBRARY_BIN%
-if errorlevel 1 exit 1
 mkdir %LIBRARY_LIB%
-if errorlevel 1 exit 1
 mkdir %LIBRARY_INC%
-if errorlevel 1 exit 1
 
 copy libdeflate.dll %LIBRARY_BIN%\libdeflate.dll
 if errorlevel 1 exit 1
