@@ -1,5 +1,5 @@
-{% set version = "1.10" %}
-{% set sha256 = "5c1f75c285cd87202226f4de49985dcb75732f527eefba2b3ddd70a8865f2533" %}
+{% set version = "1.12" %}
+{% set sha256 = "ba89fb167a5ab6bbdfa6ee3b1a71636e8140fa8471cce8a311697584948e4d06" %}
 
 package:
   name: libdeflate
