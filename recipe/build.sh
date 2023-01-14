@@ -1,11 +1,13 @@
 #!/bin/bash
 set -x
+mkdir build
+cd build
 
-make
+cmake ${CMAKE_ARGS} \
+  -DLIBDEFLATE_BUILD_STATIC_LIB=OFF \
+  -DCMAKE_INSTALL_PREFIX=${PREFIX} \
+  ..
 
-# The make script uses the $PREFIX env variable to install the application.
-# The 'gzip' application (which is not gzip) will be renamed libdeflate-gzip.
+make -j ${CPU_COUNT}
+
 make install
-
-# Remove static libraries that are installed automatically
-rm -f $PREFIX/lib/libdeflate.a
