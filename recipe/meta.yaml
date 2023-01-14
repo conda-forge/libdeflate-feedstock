@@ -1,5 +1,5 @@
-{% set version = "1.14" %}
-{% set sha256 = "89e7df898c37c3427b0f39aadcf733731321a278771d20fc553f92da8d4808ac" %}
+{% set version = "1.16" %}
+{% set sha256 = "e301128ae6c3e257a69848bae89b5b68bb7f6e65d165a93ef6dd107079e67edd" %}
 
 package:
   name: libdeflate
@@ -18,6 +18,8 @@ requirements:
   build:
     - {{ compiler('c') }}
     - make  # [unix]
+    - cmake
+    - ninja  # [win]
 
 test:
   commands:
@@ -26,8 +28,8 @@ test:
     - test -f ${PREFIX}/include/libdeflate.h        # [unix]
     - libdeflate-gzip -h
     - libdeflate-gunzip -h
-    - if not exist %LIBRARY_BIN%\\libdeflate.dll exit 1  # [win]
-    - if not exist %LIBRARY_LIB%\\libdeflate.lib exit 1  # [win]
+    - if not exist %LIBRARY_BIN%\\deflate.dll exit 1  # [win]
+    - if not exist %LIBRARY_LIB%\\deflate.lib exit 1  # [win]
     - if not exist %LIBRARY_INC%\\libdeflate.h exit 1    # [win]
 
 about:
