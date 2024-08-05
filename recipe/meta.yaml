@@ -1,5 +1,5 @@
-{% set version = "1.20" %}
-{% set sha256 = "ed1454166ced78913ff3809870a4005b7170a6fd30767dc478a09b96847b9c2a" %}
+{% set version = "1.21" %}
+{% set sha256 = "50827d312c0413fbd41b0628590cd54d9ad7ebf88360cba7c0e70027942dbd01" %}
 
 package:
   name: libdeflate
@@ -17,6 +17,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib('c') }}
     - make  # [unix]
     - cmake
     - ninja  # [win]
