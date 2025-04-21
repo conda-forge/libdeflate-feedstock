@@ -15,7 +15,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 libdeflate:
-- '1.22'
+- '1.23'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 target_platform:
