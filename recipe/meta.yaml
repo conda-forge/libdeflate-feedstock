@@ -2,14 +2,14 @@
 
 package:
   name: libdeflate
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://github.com/ebiggers/libdeflate/archive/v{{ version }}.tar.gz
   sha256: d11473c1ad4c57d874695e8026865e38b47116bbcb872bfc622ec8f37a86017d
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('libdeflate', max_pin='x.x') }}
 
