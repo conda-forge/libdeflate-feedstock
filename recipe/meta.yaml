@@ -1,4 +1,4 @@
-{% set version = "1.25" %}
+{% set version = "1.26" %}
 
 package:
   name: libdeflate
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/ebiggers/libdeflate/archive/v{{ version }}.tar.gz
-  sha256: d11473c1ad4c57d874695e8026865e38b47116bbcb872bfc622ec8f37a86017d
+  sha256: bba03fffc5538576213675ce6968fcff6ce2e67d82e4d5febea2d05f9f13cf85
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage('libdeflate', max_pin='x.x') }}
 
